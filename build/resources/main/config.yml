@@ -1,0 +1,11 @@
+options:
+  health-scale: 20
+  #最好不要改
+  number-pattern: '(?<value>(\\+|\\-)?(\\d+(?:(\\.\\d+))?))'
+stats:
+  attribute-format: '&7{name} &8= &c{value}'
+  none: 'None'
+  status: 'Status:'
+  status-value: '{key} = {value}'
+  placeholder: 'Placeholder:'
+  placeholder-value: '{key} = {value}'

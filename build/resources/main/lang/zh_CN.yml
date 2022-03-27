@@ -1,0 +1,16 @@
+prefix: '&d[&9AttributeSystem&d] '
+
+fight-in: '&d[&9AttributeSystem&d] &e你已进入战斗状态!'
+fight-out: '&d[&9AttributeSystem&d] &e你已离开战斗状态!'
+
+read-group-register: '&d[&9AttributeSystem&d] &e属性读取组 &6{0} &e已成功注册&e!'
+read-group-reload-start: '&d[&9AttributeSystem&d] &6属性读取组 &a正在开始加载...'
+read-group-reload-end: '&d[&9AttributeSystem&d] &6属性读取组 &a已全部加载完毕!'
+
+attribute-register: '&d[&9AttributeSystem&d] &e属性 &6{0} &8(&7 {1} &8) &e已成功注册&e!'
+attribute-reload-start: '&d[&9AttributeSystem&d] &6属性 &a正在开始加载...'
+attribute-reload-end: '&d[&9AttributeSystem&d] &6属性 &a已全部加载完毕!'
+
+condition-register: '&d[&9AttributeSystem&d] &e条件 &6{0} &e已成功注册&e!'
+condition-reload-start: '&d[&9AttributeSystem&d] &6条件 &a正在开始加载...'
+condition-reload-end: '&d[&9AttributeSystem&d] &6条件 &a已全部加载完毕!'
