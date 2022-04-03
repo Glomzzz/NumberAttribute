@@ -10,15 +10,20 @@ import com.skillw.pouvoir.api.manager.Manager.Companion.addSingle
 import com.skillw.pouvoir.util.FileUtils
 import java.io.File
 
-object NAConfig : ConfigManager(AttributeSystem) {
+object NAConfig : ConfigManager(NumberAttribute) {
     override val priority = 0
     override fun defaultOptions(): Map<String, Map<String, Any>> = emptyMap()
 
     override val isCheckVersion
         get() = this["config"].getBoolean("options.check-version")
 
-    override fun onLoad() {
+    override fun onInit() {
+        this.createIfNotExists("attributes", "BaseAttribute.yml")
+        this.createIfNotExists("conditions", "conditions.yml")
+        this.createIfNotExists("read", "default.yml")
+    }
 
+    override fun onLoad() {
         AttributeSystem.readPatternManager.addSingle("Reload") {
             FileUtils.loadMultiply(
                 File(NumberAttribute.plugin.dataFolder, "read"), ReadGroup::class.java
@@ -40,14 +45,16 @@ object NAConfig : ConfigManager(AttributeSystem) {
                 it.key.register()
             }
         }
+
+
     }
 
     override fun onEnable() {
-        AttributeSystem.readPatternManager.onReload()
-        AttributeSystem.attributeManager.onReload()
-        AttributeSystem.conditionManager.onReload()
-
         onReload()
+    }
+
+    override fun subReload() {
+        AttributeSystem.reload()
     }
 
     val numberPattern: String
