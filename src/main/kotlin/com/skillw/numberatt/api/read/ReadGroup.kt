@@ -73,7 +73,7 @@ class ReadGroup(
             return try {
                 val placeholders = LowerMap<String>()
                 val placeholderSection = section.getConfigurationSection("placeholder")
-                placeholderSection?.getConfigurationSection("placeholder")?.getKeys(false)?.forEach {
+                placeholderSection?.getKeys(false)?.forEach {
                     placeholders[it] = placeholderSection[it].toString()
                 }
                 val readGroup = ReadGroup(
